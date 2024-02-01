@@ -4,8 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, Controller } from 'react-hook-form'
 import * as z from 'zod'
 import { Checkbox } from '@/components/ui/checkbox'
+import { motion } from 'framer-motion'
 
-import { GenreFieldName } from './types'
 import {
     Form,
     FormControl,
@@ -14,6 +14,9 @@ import {
     FormLabel,
     FormMessage,
 } from '@/components/ui/form'
+
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+
 import { Input } from '@/components/ui/input'
 import { toast } from '@/components/ui/use-toast'
 import { Controllers } from '../Wizard/Controllers'
@@ -45,15 +48,10 @@ const FormSchema = z.object({
     direction: z.string().min(1, {
         message: 'La dirección es obligatoria.',
     }),
-    genre: z
-        .object({
-            men: z.boolean(),
-            women: z.boolean(),
-            other: z.boolean(),
-        })
-        .refine((data) => Object.values(data).some(Boolean), {
-            message: 'Debe seleccionar al menos un género.',
-        }),
+    genre: z.enum(['men', 'women', 'other'], {
+        required_error: 'Debes seleccionar uno',
+    }),
+
     preference: z
         .object({
             email: z.boolean(),
@@ -76,11 +74,6 @@ export function InputForm() {
             email: '',
             phone: '',
             direction: '',
-            genre: {
-                men: false,
-                women: false,
-                other: false,
-            },
             preference: {
                 email: false,
                 telefono: false,
@@ -90,18 +83,18 @@ export function InputForm() {
         mode: 'onChange',
     })
 
-    const { formState, handleSubmit, setValue } = form
+    const { formState, handleSubmit } = form
 
-    const handleGenreChange = (checked: boolean, name: GenreFieldName) => {
-        if (checked) {
-            setValue('genre.men', false)
-            setValue('genre.women', false)
-            setValue('genre.other', false)
-            setValue(name, true)
-        } else {
-            setValue(name, false)
-        }
-    }
+    // const handleGenreChange = (checked: boolean, name: GenreFieldName) => {
+    //     if (checked) {
+    //         setValue('genre.men', false)
+    //         setValue('genre.women', false)
+    //         setValue('genre.other', false)
+    //         setValue(name, true)
+    //     } else {
+    //         setValue(name, false)
+    //     }
+    // }
 
     const { isValid } = formState
 
@@ -121,7 +114,7 @@ export function InputForm() {
         try {
             // Enviar datos al backend
             const response = await axios.post(
-                'http://127.0.0.1:5000/upload_lead',
+                'https://stickerseller-backend-cb0779d78440.herokuapp.com/upload_lead',
                 postData
             )
             const responseData = response.data
@@ -145,8 +138,16 @@ export function InputForm() {
         }
     }
 
+    const variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { duration: 1.5 },
+        },
+    }
+
     return (
-        <div>
+        <motion.div initial="hidden" animate={'visible'} variants={variants}>
             <div className="w-[952px] h-[600px]   flex justify-center">
                 <Form {...form}>
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -368,99 +369,52 @@ export function InputForm() {
                             </div>
                             <div className="flex items-start flex-col space-y-3">
                                 {' '}
-                                <FormLabel className="text-white flex justify-start  mt-8 mb-5 text-lg">
-                                    Género
-                                </FormLabel>
-                                <div>
-                                    <Controller
-                                        name={GenreFieldName.Men}
-                                        control={form.control}
-                                        render={({
-                                            field: { onBlur, value, name, ref },
-                                        }) => (
-                                            <>
-                                                <Checkbox
-                                                    checked={value}
-                                                    onCheckedChange={(
-                                                        checked
-                                                    ) =>
-                                                        handleGenreChange(
-                                                            checked as boolean,
-                                                            GenreFieldName.Men
-                                                        )
+                                <FormField
+                                    control={form.control}
+                                    name="genre"
+                                    render={({ field }) => (
+                                        <FormItem className="space-y-3">
+                                            <FormLabel className="text-white flex justify-start  mt-8 mb-9 text-lg">
+                                                Género
+                                            </FormLabel>
+                                            <FormControl>
+                                                <RadioGroup
+                                                    onValueChange={
+                                                        field.onChange
                                                     }
-                                                    onBlur={onBlur}
-                                                    name={name}
-                                                    ref={ref}
-                                                    className={classes.check}
-                                                />
-                                                <FormLabel className="text-white mt-10 text-lg">
-                                                    Masculino
-                                                </FormLabel>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div>
-                                    <Controller
-                                        name={GenreFieldName.Women}
-                                        control={form.control}
-                                        render={({
-                                            field: { onBlur, value, name, ref },
-                                        }) => (
-                                            <>
-                                                <Checkbox
-                                                    checked={value}
-                                                    onCheckedChange={(
-                                                        checked
-                                                    ) =>
-                                                        handleGenreChange(
-                                                            checked as boolean,
-                                                            GenreFieldName.Women
-                                                        )
-                                                    }
-                                                    onBlur={onBlur}
-                                                    name={name}
-                                                    ref={ref}
-                                                    className={classes.check}
-                                                />
-                                                <FormLabel className="text-white mt-10 text-lg">
-                                                    Femenino
-                                                </FormLabel>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div>
-                                    <Controller
-                                        name={GenreFieldName.Other}
-                                        control={form.control}
-                                        render={({
-                                            field: { onBlur, value, name, ref },
-                                        }) => (
-                                            <>
-                                                <Checkbox
-                                                    checked={value}
-                                                    onCheckedChange={(
-                                                        checked
-                                                    ) =>
-                                                        handleGenreChange(
-                                                            checked as boolean,
-                                                            GenreFieldName.Other
-                                                        )
-                                                    }
-                                                    onBlur={onBlur}
-                                                    name={name}
-                                                    ref={ref}
-                                                    className={classes.check}
-                                                />
-                                                <FormLabel className="text-white mt-10 text-lg">
-                                                    Prefiero no decirlo
-                                                </FormLabel>
-                                            </>
-                                        )}
-                                    />
-                                </div>
+                                                    defaultValue={field.value}
+                                                    className="flex flex-col space-y-1 text-white"
+                                                >
+                                                    <FormItem className=" flex items-center space-x-3 space-y-0 ">
+                                                        <FormControl>
+                                                            <RadioGroupItem value="men" />
+                                                        </FormControl>
+                                                        <FormLabel className="text-lg">
+                                                            Masculino
+                                                        </FormLabel>
+                                                    </FormItem>
+                                                    <FormItem className="flex items-center space-x-3 space-y-0">
+                                                        <FormControl>
+                                                            <RadioGroupItem value="women" />
+                                                        </FormControl>
+                                                        <FormLabel className="text-lg">
+                                                            Femenino
+                                                        </FormLabel>
+                                                    </FormItem>
+                                                    <FormItem className="flex items-center space-x-3 space-y-0">
+                                                        <FormControl>
+                                                            <RadioGroupItem value="other" />
+                                                        </FormControl>
+                                                        <FormLabel className="text-lg">
+                                                            Prefiero no decirlo
+                                                        </FormLabel>
+                                                    </FormItem>
+                                                </RadioGroup>
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
                             </div>
                         </div>
                     </form>
@@ -471,6 +425,6 @@ export function InputForm() {
                 onNextStep={() => handleSubmit(onSubmit)()}
                 isNextDisabled={!isValid}
             />
-        </div>
+        </motion.div>
     )
 }
