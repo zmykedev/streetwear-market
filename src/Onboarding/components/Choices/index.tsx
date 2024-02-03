@@ -64,14 +64,14 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
             choice: Choice.With,
             title: 'Asóciate con Nosotros con Financiamiento',
             label: 'Únete y crece con nosotros. Ofrecemos financiamiento flexible para expandir tu inventario y aumentar tus ventas.',
-            path: 'https://i.ibb.co/zs7jXWC/finance.png',
+            path: '/img/finance.png',
             alt: '',
         },
         {
             choice: Choice.Without,
             title: 'Compra Directa de Stickers',
             label: 'Explora nuestra colección de stickers de alta calidad. Compra fácil y seguro, ideal para aficionados y coleccionistas.',
-            path: 'https://i.ibb.co/Ntcy2cX/direct.png',
+            path: '/img/direct.png',
             alt: '',
         },
     ]
