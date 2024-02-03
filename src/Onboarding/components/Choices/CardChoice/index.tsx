@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+
+import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import {
     Card,
@@ -21,19 +23,33 @@ export const CardChoice: React.FunctionComponent<CardProps> = ({
     className,
     ...props
 }) => {
-    const [isImageLoaded, setImageLoaded] = useState<boolean>(false)
+    const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false)
 
     useEffect(() => {
         if (props.path) {
             const img = new Image()
             img.src = props.path
-            img.onload = () => setImageLoaded(true)
-            img.onerror = () => setImageLoaded(false)
+            img.onload = () => setIsImageLoaded(true)
+            img.onerror = () => setIsImageLoaded(false)
         }
     }, [props.path])
 
     const disabledClass = props.disabled ? 'opacity-50 cursor-not-allowed' : ''
 
+    const variants = {
+        start: {
+            scale: 0,
+            borderRadius: '50%',
+        },
+        end: {
+            scale: 1,
+            borderRadius: '0%',
+            transition: {
+                duration: 0.8,
+                ease: 'easeOut',
+            },
+        },
+    }
     return (
         <div className="flex justify-center items-center">
             <Card
@@ -43,27 +59,37 @@ export const CardChoice: React.FunctionComponent<CardProps> = ({
                 )} ${disabledClass}`}
                 {...props}
             >
-                {isImageLoaded ? (
-                    <CardHeader>
-                        <img
-                            width={300}
-                            src={props.path}
-                            alt={props.alt}
-                            loading="lazy"
-                        />
+                <CardHeader>
+                    {isImageLoaded ? (
+                        <motion.div
+                            custom={isImageLoaded}
+                            initial="start"
+                            animate="end"
+                            variants={variants}
+                        >
+                            <img
+                                width={300}
+                                src={props.path}
+                                alt={props.alt}
+                                loading="lazy"
+                            />
+                        </motion.div>
+                    ) : (
+                        <div className="flex justify-center items-center">
+                            {' '}
+                            <PuffLoader
+                                color="#ea580c"
+                                loading={true}
+                                size={150}
+                                aria-label="Loading Spinner"
+                                data-testid="loader"
+                            />
+                        </div>
+                    )}
 
-                        <CardTitle>{props.title}</CardTitle>
-                        <CardDescription>{props.label}</CardDescription>
-                    </CardHeader>
-                ) : (
-                    <PuffLoader
-                        color="#ea580c"
-                        loading={true}
-                        size={150}
-                        aria-label="Loading Spinner"
-                        data-testid="loader"
-                    />
-                )}
+                    <CardTitle>{props.title}</CardTitle>
+                    <CardDescription>{props.label}</CardDescription>
+                </CardHeader>
             </Card>
         </div>
     )
