@@ -9,8 +9,6 @@ import {
     CardTitle,
 } from '@/components/ui/card'
 
-import PuffLoader from 'react-spinners/PuffLoader'
-
 export type CardProps = React.ComponentProps<typeof Card> & {
     title?: string
     label?: string
