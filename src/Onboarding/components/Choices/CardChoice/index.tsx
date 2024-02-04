@@ -60,32 +60,19 @@ export const CardChoice: React.FunctionComponent<CardProps> = ({
                 {...props}
             >
                 <CardHeader>
-                    {isImageLoaded ? (
-                        <motion.div
-                            custom={isImageLoaded}
-                            initial="start"
-                            animate="end"
-                            variants={variants}
-                        >
-                            <img
-                                width={300}
-                                src={props.path}
-                                alt={props.alt}
-                                loading="lazy"
-                            />
-                        </motion.div>
-                    ) : (
-                        <div className="flex justify-center items-center">
-                            {' '}
-                            <PuffLoader
-                                color="#ea580c"
-                                loading={true}
-                                size={150}
-                                aria-label="Loading Spinner"
-                                data-testid="loader"
-                            />
-                        </div>
-                    )}
+                    <motion.div
+                        custom={isImageLoaded}
+                        initial="start"
+                        animate="end"
+                        variants={variants}
+                    >
+                        <img
+                            width={300}
+                            src={props.path}
+                            alt={props.alt}
+                            loading="lazy"
+                        />
+                    </motion.div>
 
                     <CardTitle>{props.title}</CardTitle>
                     <CardDescription>{props.label}</CardDescription>
