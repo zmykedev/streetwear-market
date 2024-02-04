@@ -23,7 +23,7 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
         const timer = setTimeout(() => {
             setWait(false)
             setShowChoices(true)
-        }, 2000)
+        }, 1200)
         return () => clearTimeout(timer)
     }, [])
 
@@ -40,9 +40,8 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
             setUuid(uniqueId)
             onChoiceSelected?.(newSelectedId, uniqueId)
             wizard.update?.('uuid', uniqueId)
-        } else {
-            setUuid(null)
         }
+        setUuid(null)
     }
 
     const onPost = async () => {
