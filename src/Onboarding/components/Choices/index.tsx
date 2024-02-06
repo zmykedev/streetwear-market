@@ -15,7 +15,7 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
 }) => {
     const wizard = useWizard()
     const [selectedId, setSelectedId] = useState<Choice>(Choice.Default)
-    const [uuid, setUuid] = useState<string | null>(null)
+    const [uuid, setUuid] = useState<string>("")
     const [wait, setWait] = useState(true)
     const [showChoices, setShowChoices] = useState(false)
 
@@ -28,24 +28,28 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
     }, [])
 
     const handleChoiceClick = (choiceId: Choice) => {
+        
         const newSelectedId =
             selectedId === choiceId ? Choice.Default : choiceId
         setSelectedId(newSelectedId)
+        console.log(newSelectedId, "newselectid")
         updateUuid(newSelectedId)
     }
 
     const updateUuid = (newSelectedId: Choice) => {
+        console.log(newSelectedId, "new select on update ui ()")
         if (newSelectedId !== null) {
             const uniqueId = uuidv4()
             setUuid(uniqueId)
             onChoiceSelected?.(newSelectedId, uniqueId)
             wizard.update?.('uuid', uniqueId)
         }
-        setUuid(null)
+        
     }
 
     const onPost = async () => {
         const data = { uuid, choice: selectedId }
+        console.log(data, "DATA")
         wizard.update?.('choice', selectedId)
         try {
             await axios.post(
@@ -88,19 +92,20 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
     }
 
     const choicesContent = (
-        <motion.div
+        <motion.div 
             initial="hidden"
             animate={showChoices ? 'visible' : 'hidden'}
             variants={variants}
         >
-            <div className="flex flex-row gap-36 w-[952px] h-[600px] justify-center ">
+            <div className='flex flex-col xs:mt-[200px] '>
+            <div className="lg:flex lg:flex-row xs:flex xs:flex-col gap-36 lg:gap-32 sm:gap-10 xs:h-[800px]    w-[952px] h-[600px] justify-center ">
                 {choicesData.map((data) => (
                     <CardChoice
                         key={data.choice}
                         title={data.title}
                         label={data.label}
                         path={data.path}
-                        className={`hover:cursor-pointer border-8 m-5 ${
+                        className={`hover:cursor-pointer xs:w-[100px] sm:w-[200px]  md:w-[300px] lg:w-[370px] border-8 m-5 ${
                             selectedId === data.choice
                                 ? 'border-indigo-600'
                                 : 'border-transparent'
@@ -119,6 +124,7 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
                 onNextStep={onPost}
                 isNextDisabled={isNextDisabled}
             />
+            </div>
         </motion.div>
     )
 
