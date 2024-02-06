@@ -57,15 +57,16 @@ export const CardChoice: React.FunctionComponent<CardProps> = ({
                 )} ${disabledClass}`}
                 {...props}
             >
-                <CardHeader>
+                <CardHeader className={`${cn('xs:w-[100px] w-300px')}`}>
                     <motion.div
+                    className='flex justify-center'
                         custom={isImageLoaded}
                         initial="start"
                         animate="end"
                         variants={variants}
                     >
-                        <img
-                            width={300}
+                        <img className='xs:w-[20px] sm:w-[300px] w-[230px] '
+                            
                             src={props.path}
                             alt={props.alt}
                             loading="lazy"
