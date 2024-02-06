@@ -1,11 +1,12 @@
 import { Button } from '@/components/ui/button'
 
 interface Props {
-    onNextStep?: () => void
-    onBackStep?: () => void
-    isNextDisabled?: boolean
-    isBackHidden?: boolean
-    isFinish?: boolean
+    onNextStep?: () => void;
+    onBackStep?: () => void;
+    isNextDisabled?: boolean;
+    isBackHidden?: boolean;
+    isFinish?: boolean;
+    className?: string;
 }
 
 export const Controllers: React.FunctionComponent<Props> = ({
@@ -14,6 +15,7 @@ export const Controllers: React.FunctionComponent<Props> = ({
     isNextDisabled,
     isBackHidden,
     isFinish,
+    className,
 }) => {
     const justifyContentClass = isBackHidden ? 'justify-end' : 'justify-between'
 
@@ -21,7 +23,7 @@ export const Controllers: React.FunctionComponent<Props> = ({
 
     return (
         
-        <div className={`flex ${justifyContentClass} m-5`}>
+        <div className={`${className} flex ${justifyContentClass} m-5`}>
             <Button
                 className={`bg-orange-600 hover:bg-orange-500 ${backHidden} `}
                 onClick={onBackStep}

@@ -98,7 +98,7 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
             variants={variants}
         >
             <div className='flex flex-col xs:mt-[200px] '>
-            <div className="lg:flex lg:flex-row xs:flex xs:flex-col gap-36 lg:gap-32 sm:gap-10 xs:h-[800px]    w-[952px] h-[600px] justify-center ">
+            <div className="lg:flex lg:flex-row xs:flex xs:flex-col xs:gap-none gap-36 lg:gap-32 sm:gap-10 xs:h-[800px]    justify-center ">
                 {choicesData.map((data) => (
                     <CardChoice
                         key={data.choice}
@@ -119,7 +119,8 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
                     />
                 ))}
             </div>
-            <Controllers
+                <Controllers
+                    className='xs:absolute xs:right-200px'
                 isBackHidden
                 onNextStep={onPost}
                 isNextDisabled={isNextDisabled}
