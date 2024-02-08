@@ -428,6 +428,7 @@ export function InputForm() {
                 </Form>
             </div>
             <Controllers
+                className="mt-10"
                 onBackStep={wizard.onBackStep}
                 onNextStep={() => handleSubmit(onSubmit)()}
                 isNextDisabled={!isValid}

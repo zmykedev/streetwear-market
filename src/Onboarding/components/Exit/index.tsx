@@ -39,7 +39,7 @@ export const Exit: React.FunctionComponent = () => {
                     />
                 )}
                 <div className="flex flex-col justify-center items-center h-screen space-y-4">
-                    <p className="text-2xl md:text-4xl font-bold text-center text-gray-700 animate-bounce">
+                    <p className="text-2xl md:text-4xl font-bold text-center text-gray-200 hover:underline hover:decoration-5 hover:underline-offset-7 hover:decoration-wavy decoration-orange-600 animate-bounce">
                         ¡Has finalizado tu proceso de inscripción! <br />
                         Por favor, revisa tu correo.
                     </p>

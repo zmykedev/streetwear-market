@@ -3,7 +3,7 @@ import { Onboarding } from './Onboarding'
 
 function App() {
     return (
-        <div className="items-center h-screen flex justify-center flex-row gap-9">
+        <div className="items-center sm:h-screen h-fit flex justify-center flex-row gap-9">
             <Onboarding />
         </div>
     )

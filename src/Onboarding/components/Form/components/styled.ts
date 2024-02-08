@@ -28,7 +28,7 @@ export const InputContainer = styled.div<InputContainerProps>`
         ${(props) =>
             props.typeMode === InputMode.fullCol &&
             css`
-                width: 48%;
+                width: 100%;
             `}
     }
 
@@ -36,7 +36,7 @@ export const InputContainer = styled.div<InputContainerProps>`
         ${(props) =>
             props.typeMode === InputMode.fullCol &&
             css`
-                width: 90%;
+                width: 100%;
             `}// Ejemplo de ajuste para semiCol en un breakpoint
     }
 
@@ -45,7 +45,7 @@ export const InputContainer = styled.div<InputContainerProps>`
         ${(props) =>
             props.typeMode === InputMode.fullCol &&
             css`
-                width: 95%;
+                width: 100%;
             `}
     }
     // Media query para 'lg'
