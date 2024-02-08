@@ -5,6 +5,7 @@ import { useForm, Controller } from 'react-hook-form'
 import * as z from 'zod'
 import { Checkbox } from '@/components/ui/checkbox'
 import { motion } from 'framer-motion'
+import { InputMode } from './components/styled'
 
 import {
     Form,
@@ -148,38 +149,44 @@ export function InputForm() {
 
     return (
         <motion.div initial="hidden" animate={'visible'} variants={variants}>
-            <div className="w-[952px] h-[600px]   flex justify-center">
+            <div className="  flex justify-center">
                 <Form {...form}>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <FormField
                             control={form.control}
                             name="username"
                             render={({ field: fieldName }) => (
-                                <InputContainer>
-                                    <FormItem>
-                                        <FormLabel className="text-white flex justify-start mt-6 text-lg">
-                                            Nombre
-                                        </FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                className="text-white"
-                                                placeholder="Jane Doe"
-                                                {...fieldName}
-                                            />
-                                        </FormControl>
+                                <div>
+                                    <InputContainer
+                                        typeMode={InputMode.fullCol}
+                                    >
+                                        <FormItem>
+                                            <FormLabel className="text-white flex justify-start mt-6 text-lg">
+                                                Nombre
+                                            </FormLabel>
+                                            <FormControl>
+                                                <Input
+                                                    className="text-white"
+                                                    placeholder="Jane Doe"
+                                                    {...fieldName}
+                                                />
+                                            </FormControl>
 
-                                        <FormMessage />
-                                    </FormItem>
-                                </InputContainer>
+                                            <FormMessage />
+                                        </FormItem>
+                                    </InputContainer>
+                                </div>
                             )}
                         />
 
-                        <div className="flex flex-row  gap-8 -mt-3">
+                        <div className="flex flex-col sm:flex-row  gap-8 -mt-3">
                             <FormField
                                 control={form.control}
                                 name="rut"
                                 render={({ field: fieldRut }) => (
-                                    <InputContainer>
+                                    <InputContainer
+                                        typeMode={InputMode.semiCol}
+                                    >
                                         <FormItem>
                                             <FormLabel className="text-white flex justify-start mt-8 text-lg">
                                                 Rut
@@ -221,7 +228,7 @@ export function InputForm() {
                                 />
                             </InputContainer>
                         </div>
-                        <div className="flex flex-row mt-4  gap-8">
+                        <div className="flex flex-col sm:flex-row mt-4  gap-8">
                             <InputContainer>
                                 <FormField
                                     control={form.control}
@@ -267,7 +274,7 @@ export function InputForm() {
                                 />
                             </InputContainer>
                         </div>
-                        <div className="flex flex-row gap-40 mt-6">
+                        <div className="flex flex-col sm:flex-row  gap-0 sm:gap-40  mt-6">
                             <div className="flex items-start flex-col space-y-3">
                                 {' '}
                                 <FormLabel className="text-white flex justify-start  mt-8 mb-5 text-lg">
