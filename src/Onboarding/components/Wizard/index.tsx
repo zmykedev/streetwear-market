@@ -40,5 +40,5 @@ export const Wizard: React.FC<Props> = React.memo(({ step }) => {
         }
     }, [step])
 
-    return <>{handleRenderComponent}</>
+    return <div>{handleRenderComponent}</div>
 })

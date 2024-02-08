@@ -95,15 +95,24 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
             animate={showChoices ? 'visible' : 'hidden'}
             variants={variants}
         >
-            <div className="flex flex-col xs:mt-[200px] ">
-                <div className="lg:flex lg:flex-row xs:flex xs:flex-col xs:gap-none gap-36 lg:gap-32 sm:gap-10 xs:h-[800px]    justify-center ">
+            <div className="flex flex-col mt-[15px] sm:mt-[0px] ">
+                <p
+                    className={`text-white absolute top-2 sm:top-10 sm:absolute overline ${
+                        isNextDisabled
+                            ? 'decoration-orange-600/[.33]'
+                            : 'decoration-orange-600'
+                    } text-xl left-1/2 -translate-x-1/2 shadow-2xl transform translate-y-1 scale-105`}
+                >
+                    Elige tu Opción
+                </p>
+                <div className="lg:flex lg:flex-row mt-4 xs:flex xs:flex-col xs:gap-none gap-36 lg:gap-32 sm:gap-10 xs:h-[800px]    justify-center ">
                     {choicesData.map((data) => (
                         <CardChoice
                             key={data.choice}
                             title={data.title}
                             label={data.label}
                             path={data.path}
-                            className={`hover:cursor-pointer xs:w-[100px] sm:w-[200px]  md:w-[300px] lg:w-[370px] border-8 m-5 ${
+                            className={`hover:cursor-pointer w-[340px]    sm:w-[400px]  border-8 m-5 ${
                                 selectedId === data.choice
                                     ? 'border-indigo-600'
                                     : 'border-transparent'
@@ -118,7 +127,7 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
                     ))}
                 </div>
                 <Controllers
-                    className="xs:absolute xs:right-200px"
+                    className="absolute right-[135px]  bottom-[10px] sm:bottom-auto   sm:right-auto sm:relative sm:flex sm:justify-end m-5"
                     isBackHidden
                     onNextStep={onPost}
                     isNextDisabled={isNextDisabled}
