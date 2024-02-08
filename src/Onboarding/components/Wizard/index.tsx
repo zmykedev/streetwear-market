@@ -19,6 +19,14 @@ export interface Props {
 export const Wizard: React.FC<Props> = React.memo(({ step }) => {
     /**
      * @description
+     * useEffect for scroll the view at the top of the page.
+     */
+    React.useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [step])
+
+    /**
+     * @description
      * Render memo shallow component that contain the current info.
      */
     const handleRenderComponent = React.useMemo<React.ReactNode>(() => {
