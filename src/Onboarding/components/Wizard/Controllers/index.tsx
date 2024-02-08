@@ -17,9 +17,11 @@ export const Controllers: React.FunctionComponent<Props> = ({
     isFinish,
     className,
 }) => {
-    const justifyContentClass = isBackHidden ? 'justify-end' : 'justify-between'
+    const justifyContentClass = isBackHidden
+        ? 'justify-center'
+        : 'justify-between'
 
-    const backHidden = isBackHidden ? 'opacity-0' : 'opacity-1'
+    const backHidden = isBackHidden ? 'hidden' : 'opacity-1'
 
     return (
         <div className={`${className} flex ${justifyContentClass} m-5`}>
