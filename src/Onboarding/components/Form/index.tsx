@@ -152,6 +152,15 @@ export function InputForm() {
             <div className="  flex justify-center">
                 <Form {...form}>
                     <form onSubmit={handleSubmit(onSubmit)}>
+                        <p
+                            className={`text-white mt-5 overline ${
+                                !isValid
+                                    ? 'decoration-orange-600/[.33]'
+                                    : 'decoration-orange-600'
+                            } text-xl l`}
+                        >
+                            Ingresa tus datos
+                        </p>
                         <FormField
                             control={form.control}
                             name="username"

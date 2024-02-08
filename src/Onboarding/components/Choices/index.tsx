@@ -63,14 +63,14 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
     const choicesData = [
         {
             choice: Choice.With,
-            title: 'Asóciate con Nosotros con Financiamiento',
+            title: 'Asóciate con nosotros con Financiamiento',
             label: 'Únete y crece con nosotros. Ofrecemos financiamiento flexible para expandir tu inventario y aumentar tus ventas.',
             path: '/img/finance.webp',
             alt: '',
         },
         {
             choice: Choice.Without,
-            title: 'Compra Directa de Stickers',
+            title: 'Compra directa de Stickers',
             label: 'Explora nuestra colección de stickers de alta calidad. Compra fácil y seguro, ideal para aficionados y coleccionistas.',
             path: '/img/direct.webp',
             alt: '',
@@ -103,7 +103,7 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
                             : 'decoration-orange-600'
                     } text-xl left-1/2 -translate-x-1/2 shadow-2xl transform translate-y-1 scale-105`}
                 >
-                    Elige tu Opción
+                    Elige tu opción
                 </p>
                 <div className="lg:flex lg:flex-row mt-4 xs:flex xs:flex-col xs:gap-none gap-36 lg:gap-32 sm:gap-10 xs:h-[800px]    justify-center ">
                     {choicesData.map((data) => (
@@ -127,7 +127,7 @@ export const Choices: React.FunctionComponent<ChoicesProps> = ({
                     ))}
                 </div>
                 <Controllers
-                    className="absolute right-[135px]  bottom-[10px] sm:bottom-auto   sm:right-auto sm:relative sm:flex sm:justify-end m-5"
+                    className=" sm:bottom-auto mb-5   sm:right-auto sm:relative sm:flex sm:justify-end "
                     isBackHidden
                     onNextStep={onPost}
                     isNextDisabled={isNextDisabled}
