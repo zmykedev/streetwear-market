@@ -1,11 +1,14 @@
 import './App.css'
-import { Onboarding } from './Onboarding'
+import { ThemeProvider } from './components/ui/theme-provider'
+import { ModeToggle } from './components/ui/mode-toggle'
+import { HeroSection } from './components/hero'
 
 function App() {
     return (
-        <div className="items-center sm:h-screen h-fit flex justify-center flex-row gap-9">
-            <Onboarding />
-        </div>
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+            <HeroSection></HeroSection>
+            <ModeToggle />
+        </ThemeProvider>
     )
 }
 
