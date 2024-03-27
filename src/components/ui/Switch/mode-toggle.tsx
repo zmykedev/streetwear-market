@@ -13,7 +13,7 @@ export function ModeToggle() {
 
     return (
         <div className="fixed top-4 right-4 z-50">
-            <div className="lg:text-3xl text-2xl">
+            <div>
                 <label className="switch hover:cursor-pointer">
                     <input
                         className="switch__input hover:cursor-pointer"
