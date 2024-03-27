@@ -24,10 +24,10 @@ export const Contact = React.forwardRef<HTMLDivElement, ContactProps>(
             <section ref={ref} data-aos="fade-left" className="w-full h-screen">
                 <div className="flex justify-center">
                     <div className="w-full md:w-1/2 flex flex-col p-5 lg:p-0">
-                        <h2 className="text-3xl font-semibold mb-4 flex justify-start">
+                        <h2 className="text-3xl font-semibold mb-4 lg:mb-20 flex justify-start">
                             {customTitle}
                         </h2>
-                        <div className="flex flex-col space-y-2 lg:space-y-0  lg:flex-row justify-between mb-6">
+                        <div className="flex flex-col space-y-2 lg:space-y-0  lg:flex-row justify-between mb-4">
                             <div className="flex items-center space-x-3 bg-slate-800 dark:bg-white  p-3 rounded-lg  text-white dark:text-black">
                                 <Smartphone />
                                 <span>(+569) 8151 - 4796</span>
