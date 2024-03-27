@@ -26,27 +26,33 @@ const skills: Skill[] = [
     { id: 15, name: 'Adaptable Learner' },
 ]
 
-export const Skills = React.forwardRef<HTMLDivElement>((props, ref) => {
-    return (
-        <section ref={ref} data-aos="fade-left" className="w-full">
-            <div className="flex justify-center">
-                <div className="w-full md:w-1/2 flex flex-col">
-                    <h2 className="text-3xl font-semibold p-5 lg:p-0 flex justify-start mb-4">
-                        Skills
-                    </h2>
-                    <div className="flex flex-wrap justify-center gap-4 mb-4">
-                        {skills.map((skill) => (
-                            <Badge
-                                key={skill.id}
-                                className="rounded-xl text-2xl lg:text-4xl leading-9"
-                                variant="secondary"
-                            >
-                                {skill.name}
-                            </Badge>
-                        ))}
+interface SkillsProps {
+    customTitle?: string
+}
+
+export const Skills = React.forwardRef<HTMLDivElement, SkillsProps>(
+    ({ customTitle = 'Skills' }, ref) => {
+        return (
+            <section ref={ref} data-aos="fade-left" className="w-full">
+                <div className="flex justify-center">
+                    <div className="w-full md:w-1/2 flex flex-col">
+                        <h2 className="text-3xl font-semibold p-5 lg:p-0 flex justify-start mb-4">
+                            {customTitle}
+                        </h2>
+                        <div className="flex flex-wrap justify-center gap-4 mb-4">
+                            {skills.map((skill) => (
+                                <Badge
+                                    key={skill.id}
+                                    className="rounded-xl text-2xl lg:text-4xl leading-9"
+                                    variant="secondary"
+                                >
+                                    {skill.name}
+                                </Badge>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    )
-})
+            </section>
+        )
+    }
+)
