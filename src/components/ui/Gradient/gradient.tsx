@@ -25,7 +25,7 @@ export function Gradient() {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
     return (
-        <div className="relative w-full max-w-5xl xl:max-w-xl mx-auto h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[450px] overflow-hidden rounded-lg">
+        <div className="relative w-full max-w-5xl xl:max-w-xl mx-auto h-[200px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[300px] overflow-hidden rounded-lg">
             <div className="absolute inset-0">
                 <Novatrix />
             </div>

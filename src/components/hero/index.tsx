@@ -1,11 +1,13 @@
+import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Gradient } from '../ui/Gradient/gradient'
 
-export const HeroSection: React.FunctionComponent = () => {
+export const HeroSection = React.forwardRef<HTMLDivElement>((props, ref) => {
     return (
-        <div
+        <section
+            ref={ref}
             data-aos="fade-bottom"
-            className="flex flex-col items-center h-[600px] p-5 m-2 gap-y-10"
+            className="flex flex-col items-center p-5 m-2  gap-y-10"
         >
             <div className="ml-[260px] xl:mr-[520px]">
                 <Avatar>
@@ -19,6 +21,8 @@ export const HeroSection: React.FunctionComponent = () => {
                 I've been in the industry for over 3 years and have experience
                 working with small startups to large corporations.
             </div>
-        </div>
+        </section>
     )
-}
+})
+
+HeroSection.displayName = 'HeroSection'

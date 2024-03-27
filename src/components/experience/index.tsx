@@ -1,16 +1,73 @@
 import React from 'react'
 
-export const Experience: React.FunctionComponent = () => {
+import ccc from '@/assets/otic.jpeg'
+
+import valor from '@/assets/reddevalor.jpg'
+import xbrein from '@/assets/xbrein.jpeg'
+import proyecte from '@/assets/proyecte.jpeg'
+
+const dummyData = [
+    {
+        company: 'Red de Valor',
+        role: 'Senior Frontend Engineer',
+        period: '2023-Actualidad',
+        img: valor,
+    },
+    {
+        company: 'Capacitación de la camara chilena de la construccion',
+        role: 'Senior FullStack Developer',
+        period: '2023-Actualidad',
+        img: ccc,
+    },
+    {
+        company: 'Proyecte',
+        role: 'FullStack Developer',
+        period: '2022-2023',
+        img: proyecte,
+    },
+    {
+        company: 'Xbrein',
+        role: 'FullStack Developer',
+        period: '2022-2023',
+        img: xbrein,
+    },
+]
+
+export const Experience = React.forwardRef<HTMLDivElement>((props, ref) => {
     return (
-        <div data-aos="fade-right" className="w-full h-[500px] ">
+        <section ref={ref} data-aos="fade-right" className="w-full h-screen">
             <div className="flex justify-center">
-                <div className="w-[50%] flex flex-col">
-                    <h2 className="text-xl font-semibold self-start mb-4">
+                <div className="w-full md:w-1/2 flex flex-col">
+                    <h2 className="text-3xl font-semibold p-5 lg:p-0 mb-4 flex justify-start">
                         Experience
                     </h2>
-                    <div></div>
+                    <div className="mx-auto">
+                        {dummyData.map((item, index) => (
+                            <div
+                                key={index}
+                                className="flex flex-row w-full items-start flex-grow  mb-4 p-4 "
+                            >
+                                <div className="flex justify-start">
+                                    <img
+                                        src={item.img}
+                                        alt="logo"
+                                        className="w-20 h-20 mr-4 bg-black dark:bg-white rounded-lg"
+                                    />{' '}
+                                    {/* Ajusta el tamaño de la imagen */}
+                                    <div className=" flex flex-col flex-grow justify-start mt-4 ">
+                                        <h3 className="font-bold text-lg self-start">
+                                            {item.role}
+                                        </h3>
+                                        <p className="text-gray-400  flex justify-start ">
+                                            {item.company}, {item.period}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
-}
+})
