@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import './App.css'
 import { ThemeProvider } from './components/ui/theme-provider'
-import { ModeToggle } from './components/ui/mode-toggle'
+import { ModeToggle } from './components/ui/Switch/mode-toggle'
 import { HeroSection } from './components/hero'
 import { Skills } from './components/skills'
 import AOS from 'aos'

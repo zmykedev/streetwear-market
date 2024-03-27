@@ -1,6 +1,7 @@
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Gradient } from '../ui/Gradient/gradient'
+import avatar from '@/assets/Myke.jpg'
 
 interface HeroProps {
     name?: string
@@ -12,20 +13,20 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
             <section
                 ref={ref}
                 data-aos="fade-bottom"
-                className="flex flex-col items-center p-5 m-2  gap-y-10"
+                className="flex flex-col items-center p-5 m-2  gap-y-4 lg:gap-y-7"
             >
-                <div className="ml-[260px] xl:mr-[520px]">
+                <div className="mr-72 lg:mr-[500px] ">
                     <Avatar>
-                        <AvatarImage src="/src/assets/Myke.jpg" />
+                        <AvatarImage src={avatar} />
                         <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                 </div>
                 <Gradient />
-                <div className="text-4xl"> Hi i'am {name} Developer</div>
+                <div className="text-4xl"> Hola soy {name} Developer</div>
                 <div className="w-[60%] text-2xl">
-                    I've been in the industry for over 3 years and have
-                    experience working with small startups to large
-                    corporations.
+                    He estado en la industria por más de 3 años y tengo
+                    experiencia trabajando desde pequeñas empresas hasta grandes
+                    corporaciones.
                 </div>
             </section>
         )
