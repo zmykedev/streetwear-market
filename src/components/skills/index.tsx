@@ -33,7 +33,12 @@ interface SkillsProps {
 export const Skills = React.forwardRef<HTMLDivElement, SkillsProps>(
     ({ customTitle = 'Skills' }, ref) => {
         return (
-            <section ref={ref} data-aos="fade-left" className="w-full">
+            <section
+                ref={ref}
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="w-full"
+            >
                 <div className="flex justify-center">
                     <div className="w-full md:w-1/2 flex flex-col">
                         <h2 className="text-3xl font-semibold p-5 lg:p-0 flex justify-start mb-4">

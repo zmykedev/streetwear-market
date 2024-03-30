@@ -42,7 +42,8 @@ export const Experience = React.forwardRef<HTMLDivElement, ExperienceProps>(
         return (
             <section
                 ref={ref}
-                data-aos="fade-right"
+                data-aos="fade-up-right"
+                data-aos-duration="2000"
                 className="w-full h-screen"
             >
                 <div className="flex justify-center">

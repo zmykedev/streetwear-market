@@ -3,6 +3,8 @@ import { Smartphone, MailIcon, LocateIcon } from 'lucide-react'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import { Textarea } from '../ui/textarea'
+import { useTheme } from '../ui/theme-provider'
+import '../ui/Menu/index.css'
 
 interface ContactProps {
     customTitle?: string
@@ -12,6 +14,8 @@ export const Contact = React.forwardRef<HTMLDivElement, ContactProps>(
     ({ customTitle = 'Contact' }, ref) => {
         const [name, setName] = useState('')
 
+        const { theme } = useTheme()
+
         const [message, setMessage] = useState('')
 
         const handleSubmit = (e: FormEvent) => {
@@ -19,9 +23,14 @@ export const Contact = React.forwardRef<HTMLDivElement, ContactProps>(
             const mailtoLink = `mailto:zmaikol399@gmail.com?subject=Contact from ${name}&body=${message}`
             window.location.href = mailtoLink
         }
-
+        const color = theme === 'dark' ? 'color-7' : 'color-8'
         return (
-            <section ref={ref} data-aos="fade-left" className="w-full h-screen">
+            <section
+                ref={ref}
+                data-aos-duration="2000"
+                data-aos="fade-up"
+                className="w-full h-screen"
+            >
                 <div className="flex justify-center">
                     <div className="w-full md:w-1/2 flex flex-col p-5 lg:p-0">
                         <h2 className="text-3xl font-semibold mb-4 lg:mb-20 flex justify-start">
@@ -57,7 +66,9 @@ export const Contact = React.forwardRef<HTMLDivElement, ContactProps>(
                                 className="bg-slate-800 text-white placeholder-gray-500 dark:placeholder-gray-800 h-24  dark:bg-white dark:text-black"
                                 placeholder="Mensaje"
                             />
-                            <Button className="bg-blue-600 hover:bg-blue-700 dark:text-white">
+                            <Button
+                                className={`text-white bg-transparent btn-hover ${color} `}
+                            >
                                 Enviar
                             </Button>
                         </form>

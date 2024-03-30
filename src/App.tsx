@@ -7,7 +7,7 @@ import { Skills } from './components/skills'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { Experience } from './components/experience'
-import { MenuBar } from './components/ui/Menu'
+import { MenuBar } from './components/ui/Menu/menu'
 import { Contact } from './components/contact'
 
 function App() {

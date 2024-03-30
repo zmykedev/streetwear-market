@@ -34,3 +34,8 @@
     background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
+
+.btn-hover.color-8 {
+    background-image: linear-gradient(to right, #b1b0b5, #3a3a3a, #997F27, #ffc83d);
+    box-shadow: 0 4px 15px 0 rgba(100, 100, 161, 0.75);
+}

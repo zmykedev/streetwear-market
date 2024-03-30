@@ -7,7 +7,7 @@ import {
 } from '../tooltip'
 
 import { Menubar, MenubarMenu } from '@/components/ui/menubar'
-
+import { useTheme } from '../theme-provider'
 import { Home, TerminalSquare, Briefcase, MailPlus } from 'lucide-react'
 import './index.css'
 
@@ -23,6 +23,7 @@ interface MenuProps {
 export const MenuBar: React.FunctionComponent<MenuProps> = ({
     sectionRefs,
 }) => {
+    const { theme } = useTheme()
     const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
         if (ref?.current) {
             const yOffset = -70
@@ -33,6 +34,8 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
             window.scrollTo({ top: y, behavior: 'smooth' })
         }
     }
+
+    const color = theme === 'dark' ? 'color-7' : 'color-8'
     return (
         <TooltipProvider>
             <Menubar className="fixed flex justify-center space-x-5 bottom-0 left-0 right-0 mx-auto bg-white dark:bg-black shadow-lg p-5">
@@ -40,7 +43,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
-                                className="text-white bg-transparent btn-hover color-7"
+                                className={`text-white bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.home)
                                 }}
@@ -57,7 +60,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
-                                className="text-white bg-transparent  btn-hover color-7"
+                                className={`text-white bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.skills)
                                 }}
@@ -74,7 +77,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
-                                className="text-white bg-transparent  btn-hover color-7"
+                                className={`text-white bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.experience)
                                 }}
@@ -91,7 +94,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
-                                className="text-white bg-transparent  btn-hover color-7"
+                                className={`text-white bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.contact)
                                 }}
