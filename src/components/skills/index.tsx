@@ -37,7 +37,7 @@ export const Skills = React.forwardRef<HTMLDivElement, SkillsProps>(
                 ref={ref}
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                className="w-full"
+                className="w-full h-screen"
             >
                 <div className="flex justify-center">
                     <div className="w-full md:w-1/2 flex flex-col">

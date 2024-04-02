@@ -13,7 +13,6 @@ import { useTheme } from '../ui/theme-provider'
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
     SheetHeader,
     SheetTrigger,
 } from '@/components/ui/sheet'
