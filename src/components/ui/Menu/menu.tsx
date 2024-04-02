@@ -8,7 +8,13 @@ import {
 
 import { Menubar, MenubarMenu } from '@/components/ui/menubar'
 import { useTheme } from '../theme-provider'
-import { Home, TerminalSquare, Briefcase, MailPlus } from 'lucide-react'
+import {
+    Home,
+    TerminalSquare,
+    Briefcase,
+    MailPlus,
+    PanelsTopLeft,
+} from 'lucide-react'
 import './index.css'
 
 interface MenuProps {
@@ -16,6 +22,7 @@ interface MenuProps {
         home: React.RefObject<HTMLElement>
         skills: React.RefObject<HTMLElement>
         experience: React.RefObject<HTMLElement>
+        proyects: React.RefObject<HTMLElement>
         contact: React.RefObject<HTMLElement>
     }
 }
@@ -87,6 +94,24 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                         </TooltipTrigger>
                         <TooltipContent className="bg-slate-800  dark:bg-white  text-white  dark:text-black">
                             <p>Ir a Experiencia</p>
+                        </TooltipContent>
+                    </Tooltip>
+                </MenubarMenu>
+                <MenubarMenu>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <Button
+                                className={`text-white h-12 bg-transparent btn-hover ${color} `}
+                                onClick={() => {
+                                    scrollToSection(sectionRefs.proyects)
+                                }}
+                            >
+                                {' '}
+                                <PanelsTopLeft />
+                            </Button>
+                        </TooltipTrigger>
+                        <TooltipContent className="bg-slate-800 dark:bg-white  text-white  dark:text-black">
+                            <p>Ir a Poyectos</p>
                         </TooltipContent>
                     </Tooltip>
                 </MenubarMenu>

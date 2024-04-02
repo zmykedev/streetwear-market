@@ -48,7 +48,7 @@ export const Experience = React.forwardRef<HTMLDivElement, ExperienceProps>(
             >
                 <div className="flex justify-center">
                     <div className="w-full md:w-1/2 flex flex-col">
-                        <h2 className="text-3xl font-semibold p-5 lg:p-0 mb-4 flex justify-start">
+                        <h2 className="text-3xl font-semibold p-5 lg:p-0 mb-2 flex justify-start">
                             {customTitle}
                         </h2>
                         <div className="mx-auto">

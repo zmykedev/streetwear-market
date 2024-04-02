@@ -16,6 +16,7 @@ function App() {
     const homeRef = useRef(null)
     const skillsRef = useRef(null)
     const experienceRef = useRef(null)
+    const proyectsRef = useRef(null)
     const contactRef = useRef(null)
 
     React.useEffect(() => {
@@ -30,7 +31,7 @@ function App() {
 
                     <Skills ref={skillsRef} />
                     <Experience ref={experienceRef} />
-                    <Proyects />
+                    <Proyects ref={proyectsRef} />
                     <Contact ref={contactRef} />
                     <MenuBar
                         sectionRefs={{
@@ -38,6 +39,7 @@ function App() {
                             skills: skillsRef,
                             experience: experienceRef,
                             contact: contactRef,
+                            proyects: proyectsRef,
                         }}
                     />
                 </div>

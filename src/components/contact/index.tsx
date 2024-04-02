@@ -64,11 +64,11 @@ export const Contact = React.forwardRef<HTMLDivElement, ContactProps>(
                 ref={ref}
                 data-aos-duration="2000"
                 data-aos="fade-up"
-                className="w-full h-screen mb-20"
+                className="w-full h-screen mb-10"
             >
                 <div className="flex justify-center">
                     <div className="w-full md:w-1/2 flex flex-col p-5 lg:p-0">
-                        <h2 className="text-3xl font-semibold mb-4 lg:mb-20 flex justify-start">
+                        <h2 className="text-3xl font-semibold mb-8 lg:mb-8 flex justify-start">
                             {customTitle}
                         </h2>
                         <div className="flex flex-col space-y-2 lg:space-y-0  lg:flex-row justify-between mb-4">
