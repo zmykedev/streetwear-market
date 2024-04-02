@@ -38,7 +38,7 @@ interface ExperienceProps {
 }
 
 export const Experience = React.forwardRef<HTMLDivElement, ExperienceProps>(
-    ({ customTitle = 'Experience' }, ref) => {
+    ({ customTitle = 'Experiencia' }, ref) => {
         return (
             <section
                 ref={ref}

@@ -38,12 +38,12 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
     const color = theme === 'dark' ? 'color-7' : 'color-8'
     return (
         <TooltipProvider>
-            <Menubar className="fixed flex justify-center space-x-5 bottom-0 left-0 right-0 mx-auto bg-white dark:bg-black shadow-lg p-5">
+            <Menubar className="fixed flex h-14 justify-center space-x-5 bottom-0 left-0 right-0 mx-auto bg-white dark:bg-black shadow-lg p-5">
                 <MenubarMenu>
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
-                                className={`text-white bg-transparent btn-hover ${color} `}
+                                className={`text-white h-12 bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.home)
                                 }}
@@ -60,7 +60,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
-                                className={`text-white bg-transparent btn-hover ${color} `}
+                                className={`text-white h-12 bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.skills)
                                 }}
@@ -69,7 +69,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                             </Button>
                         </TooltipTrigger>
                         <TooltipContent className="bg-slate-800 dark:bg-white  text-white  dark:text-black">
-                            <p>Ir a Skills</p>
+                            <p>Ir a Habilidades</p>
                         </TooltipContent>
                     </Tooltip>
                 </MenubarMenu>
@@ -77,7 +77,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
-                                className={`text-white bg-transparent btn-hover ${color} `}
+                                className={`text-white h-12  bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.experience)
                                 }}
@@ -85,8 +85,8 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                                 <Briefcase />
                             </Button>
                         </TooltipTrigger>
-                        <TooltipContent className="bg-slate-800 dark:bg-white  text-white  dark:text-black">
-                            <p>Ir a Experience</p>
+                        <TooltipContent className="bg-slate-800  dark:bg-white  text-white  dark:text-black">
+                            <p>Ir a Experiencia</p>
                         </TooltipContent>
                     </Tooltip>
                 </MenubarMenu>
@@ -94,7 +94,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
-                                className={`text-white bg-transparent btn-hover ${color} `}
+                                className={`text-white h-12 bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.contact)
                                 }}
@@ -103,7 +103,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                             </Button>
                         </TooltipTrigger>
                         <TooltipContent className="bg-slate-800 dark:bg-white  text-white  dark:text-black">
-                            <p>Ir a Contact</p>
+                            <p>Ir a Contacto</p>
                         </TooltipContent>
                     </Tooltip>
                 </MenubarMenu>

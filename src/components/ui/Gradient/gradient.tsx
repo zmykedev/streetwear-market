@@ -4,7 +4,7 @@ import { useTheme } from '../theme-provider'
 
 export function Gradient() {
     const { theme } = useTheme()
-    const [text, setText] = React.useState('Welcome to my portfolio 🙌')
+    const [text, setText] = React.useState('Bienvenido a mi portafolio 🙌')
 
     React.useEffect(() => {
         // Función para actualizar el estado del texto según el ancho de la pantalla
@@ -13,11 +13,10 @@ export function Gradient() {
                 // Asume 640px como el breakpoint para 'mobile'
                 setText('Welcome 🙌')
             } else {
-                setText('Welcome to my portfolio 🙌')
+                setText('Bienvenido a mi portafolio 🙌')
             }
         }
 
-        // Agregar event listener
         window.addEventListener('resize', handleResize)
 
         // Llamar a handleResize para establecer el estado inicial correcto
@@ -25,7 +24,7 @@ export function Gradient() {
 
         // Limpiar el event listener al desmontar el componente
         return () => window.removeEventListener('resize', handleResize)
-    }, [])
+    }, [text])
 
     const canvas = theme === 'dark' ? <Novatrix /> : <Opulento />
     const welcomeColor = theme === 'dark' ? 'text-slate-900' : 'text-white'

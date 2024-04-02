@@ -16,14 +16,14 @@ const skills: Skill[] = [
     { id: 5, name: 'TypeScript' },
     { id: 6, name: 'React.js' },
     { id: 7, name: 'TailwindCSS' },
-    { id: 8, name: 'UI/UX Design' },
-    { id: 9, name: 'Web Development' },
+    { id: 8, name: 'Diseño UI/UX' },
+    { id: 9, name: 'Desarrollo Web' },
     { id: 10, name: 'CI/CD' },
     { id: 11, name: 'Git' },
-    { id: 12, name: 'Critical Thinker' },
-    { id: 13, name: 'Effective Communicator' },
-    { id: 14, name: 'Organized Achiever' },
-    { id: 15, name: 'Adaptable Learner' },
+    { id: 12, name: 'Pensamiento Critico' },
+    { id: 15, name: 'Capacidad de Adaptación' },
+    { id: 13, name: 'Comunicador Efectivo' },
+    { id: 14, name: 'Aprendizaje Continuo' },
 ]
 
 interface SkillsProps {
@@ -31,7 +31,7 @@ interface SkillsProps {
 }
 
 export const Skills = React.forwardRef<HTMLDivElement, SkillsProps>(
-    ({ customTitle = 'Skills' }, ref) => {
+    ({ customTitle = 'Habilidades' }, ref) => {
         return (
             <section
                 ref={ref}
