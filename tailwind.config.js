@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme')
 
-export const darkMode = ['class'];
+export const darkMode = ['class']
 export const content = [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-];
-export const prefix = '';
+]
+export const prefix = ''
 export const theme = {
     container: {
         center: true,
@@ -82,12 +82,13 @@ export const theme = {
         animation: {
             'accordion-down': 'accordion-down 0.2s ease-out',
             'accordion-up': 'accordion-up 0.2s ease-out',
-            'text-reveal': 'text-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s',
+            'text-reveal':
+                'text-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s',
         },
         fontFamily: {
             monse: ['"Montserrat"', ...defaultTheme.fontFamily.sans],
-            roboto: [ '"Roboto', ...defaultTheme.fontFamily.sans]
-        }
+            roboto: ['"Roboto', ...defaultTheme.fontFamily.sans],
+        },
     },
-};
-export const plugins = [require('tailwindcss-animate')];
+}
+export const plugins = [require('tailwindcss-animate')]
