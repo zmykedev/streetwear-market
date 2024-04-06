@@ -12,6 +12,7 @@ import {
     SheetTrigger,
 } from '@/components/ui/sheet'
 import cv from '@/assets/MaikolZapata2024.pdf'
+import mykelarge from '@/assets/mykelarge.jpg'
 import { Viewer } from '@react-pdf-viewer/core'
 import linkedinQr from '@/assets/linkedinqr.png'
 
@@ -48,11 +49,27 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
                 className="flex flex-col items-center p-5 m-2 w-full  gap-y-4 lg:gap-y-7 h-screen "
             >
                 <div className="mr-72  lg:mr-[500px] ">
-                    <Avatar>
-                        <AvatarImage src={avatar} />
-                        <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
+                    <Sheet>
+                        <SheetTrigger>
+                            <Avatar>
+                                <AvatarImage src={avatar} />
+                                <AvatarFallback>CN</AvatarFallback>
+                            </Avatar>
+                        </SheetTrigger>
+                        <SheetContent side={'center'}>
+                            <SheetHeader>
+                                <div className="flex justify-center">
+                                    <img
+                                        src={mykelarge}
+                                        width={500}
+                                        alt="large"
+                                    />
+                                </div>
+                            </SheetHeader>
+                        </SheetContent>
+                    </Sheet>
                 </div>
+
                 <Gradient />
                 <div className="flex xl:flex-row w-full lg:w-[35.8%] flex-col mb-2 lg:space-x-3">
                     <a
