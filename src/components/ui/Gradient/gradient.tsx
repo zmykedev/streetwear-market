@@ -30,7 +30,7 @@ export function Gradient() {
     const welcomeColor = theme === 'dark' ? 'text-slate-900' : 'text-white'
 
     return (
-        <div className="relative w-full max-w-5xl xl:max-w-xl mx-auto h-[100px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[100px] overflow-hidden rounded-lg">
+        <div className="relative w-full max-w-5xl xl:max-w-xl mx-auto h-[80px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[80px] overflow-hidden rounded-lg">
             <div className="absolute inset-0">{canvas}</div>
             <div className="absolute inset-0 flex items-center justify-center">
                 <h1
