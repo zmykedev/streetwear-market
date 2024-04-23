@@ -30,15 +30,15 @@ export function Gradient() {
     const welcomeColor = theme === 'dark' ? 'text-slate-900' : 'text-white'
 
     return (
-        <div className="relative w-full max-w-5xl xl:max-w-xl mx-auto h-[100px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[300px] overflow-hidden rounded-lg">
+        <div className="relative w-full max-w-5xl xl:max-w-xl mx-auto h-[80px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[80px] overflow-hidden rounded-lg">
             <div className="absolute inset-0">{canvas}</div>
             <div className="absolute inset-0 flex items-center justify-center">
                 <h1
-                    className={`overflow-hidden text-4xl font-bold leading-2 pb-2 ${welcomeColor}  drop-shadow-md`}
+                    className={`overflow-hidden text-4xl font-bold leading-2 pb-2 ${welcomeColor}  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}
                 >
                     {text.match(/./gu)!.map((char, index) => (
                         <span
-                            className="animate-text-reveal inline-block [animation-fill-mode:backwards]"
+                            className="animate-text-reveal inline-block [animation-fill-mode:backwards] font-roboto"
                             key={`${char}-${index}`}
                             style={{ animationDelay: `${index * 0.05}s` }}
                         >

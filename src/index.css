@@ -26,11 +26,27 @@
         --radius: 0.5rem;
         --switch-bg: #3a3a3a;
         --switch-circle-bg: #ffc83d;
-        --icon-sun: #997F27;
+        --icon-sun: #997f27;
         --icon-moon: #b1b0b5;
         --switch-circle-pos: 0.34rem;
-        --default-transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out, fill .3s ease-in-out, transform .3s ease-in-out;
+        --default-transition: color 0.3s ease-in-out,
+            background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+            fill 0.3s ease-in-out, transform 0.3s ease-in-out;
+       
     }
+
+    .font-outline-2 {
+    -webkit-text-stroke: 1px black;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 1.15px black;
+  }
+    .font-outline-1 {
+    -webkit-text-stroke: 1px white;
+  }
+  .font-outline-3 {
+    -webkit-text-stroke: 1.15px white;
+  }
 
     .dark {
         --background: 222.2 84% 4.9%;
@@ -52,15 +68,15 @@
         --border: 217.2 32.6% 17.5%;
         --input: 217.2 32.6% 17.5%;
         --ring: 224.3 76.3% 48%;
-         --switch-bg: #f5f5f6;
-        --switch-circle-bg: #6387FC;
+        --switch-bg: #f5f5f6;
+        --switch-circle-bg: #6387fc;
         --icon-sun: #b1b0b5;
         --icon-moon: #f5f5f6;
         --switch-circle-pos: 3.22rem;
     }
 }
 
-#theme-switcher{
+#theme-switcher {
     background-color: var(--switch-bg);
     border-radius: 50px;
     display: flex;
@@ -85,25 +101,31 @@
 
 #theme-switcher button {
     z-index: 1;
-     transition: var(--default-transition);
+    transition: var(--default-transition);
 }
 
-#icon-sun{
+#icon-sun {
     fill: var(--icon-sun);
 }
 
-#icon-moon{
+#icon-moon {
     fill: var(--icon-moon);
 }
-
-
 
 @layer base {
     * {
         @apply border-border;
     }
     body {
-        @apply bg-background text-foreground;
+          @apply bg-background text-foreground overflow-y-scroll;
+        scroll-snap-type: y mandatory;
         min-height: 100vh;
     }
 }
+
+@layer components {
+    .snap-start {
+        scroll-snap-align: start;
+    }
+}
+

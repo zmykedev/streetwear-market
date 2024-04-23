@@ -1,20 +1,20 @@
 /* Estilos personalizados para el contenedor del slider */
 .slider-container {
-  display: flex;
-  overflow: hidden;
-  scroll-behavior: smooth;
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Animación de desplazamiento */
 @keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 .slide-animation {
-  animation: slide 10s infinite linear;
+    animation: slide 10s infinite linear;
 }

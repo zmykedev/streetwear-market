@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react'
 import sticker from '../../assets/stickers.webp'
 import otic from '../../assets/ccc.webp'
-import landing from '@/assets/Landing.webp'
+import landing from '@/assets/Landing.png'
+import { Card } from '../ui/card'
 import './index.css'
 
 interface SkillsProps {
@@ -38,7 +39,7 @@ export const Proyects = React.forwardRef<HTMLDivElement, SkillsProps>(
             >
                 <div className="flex justify-center">
                     <div className="w-full md:w-1/2 flex flex-col">
-                        <h2 className="text-3xl font-semibold p-5 lg:p-0 flex justify-start mb-4">
+                        <h2 className="text-3xl font-semibold p-5 lg:p-0 flex justify-start mb-4 font-monse">
                             {customTitle}
                         </h2>
 
@@ -49,7 +50,7 @@ export const Proyects = React.forwardRef<HTMLDivElement, SkillsProps>(
                             onMouseLeave={() => setIsPaused(false)}
                         >
                             {projects.map((project, index) => (
-                                <div
+                                <Card
                                     key={index}
                                     className="snap-start shrink-0 w-full flex-none bg-[#1e293b] rounded-lg overflow-hidden mr-4 last:mr-0"
                                     style={{ minWidth: '300px' }}
@@ -63,16 +64,16 @@ export const Proyects = React.forwardRef<HTMLDivElement, SkillsProps>(
                                             itemType="wepb"
                                             src={project.image}
                                         />
-                                        <div className="p-4">
-                                            <h3 className="font-semibold text-white">
+                                        <div className="m-5">
+                                            <h3 className="font-semibold text-2xl text-white font-monse">
                                                 {project.title}
                                             </h3>
-                                            <p className="text-sm text-gray-400">
+                                            <p className="text-lg text-gray-400 font-roboto">
                                                 {project.description}
                                             </p>
-                                        </div>{' '}
+                                        </div>
                                     </a>
-                                </div>
+                                </Card>
                             ))}
                         </div>
                     </div>

@@ -44,11 +44,11 @@ export const Experience = React.forwardRef<HTMLDivElement, ExperienceProps>(
                 ref={ref}
                 data-aos="fade-up-right"
                 data-aos-duration="2000"
-                className="w-full h-screen"
+                className="w-full h-screen "
             >
                 <div className="flex justify-center">
                     <div className="w-full md:w-1/2 flex flex-col">
-                        <h2 className="text-3xl font-semibold p-5 lg:p-0 mb-2 flex justify-start">
+                        <h2 className="text-3xl font-semibold p-5 lg:p-0 mb-2 flex justify-start font-monse">
                             {customTitle}
                         </h2>
                         <div className="mx-auto">
@@ -65,10 +65,10 @@ export const Experience = React.forwardRef<HTMLDivElement, ExperienceProps>(
                                         />{' '}
                                         {/* Ajusta el tamaño de la imagen */}
                                         <div className=" flex flex-col flex-grow justify-start mt-4 ">
-                                            <h3 className="font-bold text-lg self-start">
+                                            <h3 className="font-bold text-lg self-start font-monse">
                                                 {item.role}
                                             </h3>
-                                            <p className="text-gray-400  flex justify-start ">
+                                            <p className="text-gray-400  flex justify-start font-roboto">
                                                 {item.company}, {item.period}
                                             </p>
                                         </div>

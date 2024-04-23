@@ -5,8 +5,6 @@
     min-height: 100vh;
 }
 
-
-
 .logo {
     height: 6em;
     padding: 1.5em;
@@ -50,7 +48,6 @@
         transform: translateX(0);
     }
 }
-
 
 @keyframes logo-spin {
     from {
