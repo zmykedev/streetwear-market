@@ -50,6 +50,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
+                                role="button"
                                 className={`text-white h-12 bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.home)
@@ -67,6 +68,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
+                                role="button"
                                 className={`text-white h-12 bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.skills)
@@ -84,6 +86,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
+                                role="button"
                                 className={`text-white h-12  bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.experience)
@@ -101,6 +104,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
+                                role="button"
                                 className={`text-white h-12 bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.proyects)
@@ -119,6 +123,7 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Button
+                                role="button"
                                 className={`text-white h-12 bg-transparent btn-hover ${color} `}
                                 onClick={() => {
                                     scrollToSection(sectionRefs.contact)
