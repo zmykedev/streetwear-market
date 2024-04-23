@@ -102,8 +102,8 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
 
                     <Gradient />
 
-                    <div className="flex xl:flex-row w-full xl:justify-center lg:w-[800px] xl:h-[30%] flex-col ">
-                        <div className="xl:w-[40%] flex justify-center ">
+                    <div className="flex xl:flex-row w-full xl:justify-center lg:w-[800px] xl:h-[30%] flex-col space-x-2 ">
+                        <div className="xl:w-[30%]  ">
                             <Tooltip>
                                 <TooltipTrigger>
                                     <img
@@ -121,7 +121,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
                                 </TooltipContent>
                             </Tooltip>
                         </div>
-                        <div className=" flex flex-col  w-full xl:w-[50%] space-y-4 justify-center ">
+                        <div className=" flex flex-col  w-full xl:w-[50%] space-y-4 justify-center  ">
                             <a
                                 href="https://www.linkedin.com/in/mzapatadvlpr/"
                                 className="w-full"
