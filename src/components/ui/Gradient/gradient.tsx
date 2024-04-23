@@ -34,7 +34,7 @@ export function Gradient() {
             <div className="absolute inset-0">{canvas}</div>
             <div className="absolute inset-0 flex items-center justify-center">
                 <h1
-                    className={`overflow-hidden text-4xl font-bold leading-2 pb-2 ${welcomeColor}  drop-shadow-md`}
+                    className={`overflow-hidden text-4xl font-bold leading-2 pb-2 ${welcomeColor}  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}
                 >
                     {text.match(/./gu)!.map((char, index) => (
                         <span

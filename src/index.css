@@ -32,7 +32,21 @@
         --default-transition: color 0.3s ease-in-out,
             background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
             fill 0.3s ease-in-out, transform 0.3s ease-in-out;
+       
     }
+
+    .font-outline-2 {
+    -webkit-text-stroke: 1px black;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 1.15px black;
+  }
+    .font-outline-1 {
+    -webkit-text-stroke: 1px white;
+  }
+  .font-outline-3 {
+    -webkit-text-stroke: 1.15px white;
+  }
 
     .dark {
         --background: 222.2 84% 4.9%;
