@@ -31,50 +31,51 @@ export const Proyects = React.forwardRef<HTMLDivElement, SkillsProps>(
             return () => clearInterval(interval)
         }, [isPaused])
         return (
-            <section
-                ref={ref}
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                className="w-full h-screen"
-            >
-                <div className="flex justify-center">
-                    <div className="w-full md:w-1/2 flex flex-col">
-                        <h2 className="text-3xl font-semibold p-5 lg:p-0 flex justify-start mb-4 font-monse">
-                            {customTitle}
-                        </h2>
+            <section ref={ref}>
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    className="w-full  "
+                >
+                    <div className="flex justify-center">
+                        <div className="w-full md:w-1/2 flex flex-col">
+                            <h2 className="text-3xl font-semibold p-5 lg:p-0 flex justify-start mb-4 font-monse">
+                                {customTitle}
+                            </h2>
 
-                        <div
-                            ref={sliderRef}
-                            className="slider-container snap-x scroll-smooth cursor-pointer"
-                            onMouseEnter={() => setIsPaused(true)}
-                            onMouseLeave={() => setIsPaused(false)}
-                        >
-                            {projects.map((project, index) => (
-                                <Card
-                                    key={index}
-                                    className="snap-start shrink-0 w-full flex-none bg-[#1e293b] rounded-lg overflow-hidden mr-4 last:mr-0"
-                                    style={{ minWidth: '300px' }}
-                                >
-                                    {' '}
-                                    <a href={project.url}>
-                                        <img
-                                            alt={`${project.title} project thumbnail`}
-                                            className="w-full h-auto"
-                                            loading="lazy"
-                                            itemType="wepb"
-                                            src={project.image}
-                                        />
-                                        <div className="m-5">
-                                            <h3 className="font-semibold text-2xl text-white font-monse">
-                                                {project.title}
-                                            </h3>
-                                            <p className="text-lg text-gray-400 font-roboto">
-                                                {project.description}
-                                            </p>
-                                        </div>
-                                    </a>
-                                </Card>
-                            ))}
+                            <div
+                                ref={sliderRef}
+                                className="slider-container snap-x scroll-smooth cursor-pointer"
+                                onMouseEnter={() => setIsPaused(true)}
+                                onMouseLeave={() => setIsPaused(false)}
+                            >
+                                {projects.map((project, index) => (
+                                    <Card
+                                        key={index}
+                                        className="snap-start shrink-0 w-full flex-none bg-[#1e293b] rounded-lg overflow-hidden mr-4 last:mr-0"
+                                        style={{ minWidth: '300px' }}
+                                    >
+                                        {' '}
+                                        <a href={project.url}>
+                                            <img
+                                                alt={`${project.title} project thumbnail`}
+                                                className="w-full h-auto"
+                                                loading="lazy"
+                                                itemType="wepb"
+                                                src={project.image}
+                                            />
+                                            <div className="m-5">
+                                                <h3 className="font-semibold text-2xl text-white font-monse">
+                                                    {project.title}
+                                                </h3>
+                                                <p className="text-lg text-gray-400 font-roboto">
+                                                    {project.description}
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </Card>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

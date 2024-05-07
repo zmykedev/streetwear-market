@@ -33,29 +33,30 @@ interface SkillsProps {
 export const Skills = React.forwardRef<HTMLDivElement, SkillsProps>(
     ({ customTitle = 'Habilidades' }, ref) => {
         return (
-            <section
-                ref={ref}
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                className="w-full h-screen"
-            >
-                <div className="flex justify-center">
-                    <div className="w-full md:w-1/2 flex flex-col">
-                        <h2 className="text-3xl font-semibold p-5 lg:p-0 flex justify-start mb-4 font-monse">
-                            {customTitle}
-                        </h2>
-                        <div className="flex flex-wrap justify-center gap-4 mb-4">
-                            {skills.map((skill) => (
-                                <Badge
-                                    key={skill.id}
-                                    className="rounded-xl text-2xl lg:text-4xl leading-9"
-                                    variant="secondary"
-                                >
-                                    <span className="font-roboto">
-                                        {skill.name}
-                                    </span>
-                                </Badge>
-                            ))}
+            <section ref={ref}>
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    className="w-full "
+                >
+                    <div className="flex justify-center ">
+                        <div className="w-full md:w-1/2 flex flex-col">
+                            <h2 className="text-3xl font-semibold p-5 lg:p-0 flex justify-start mb-4 font-monse">
+                                {customTitle}
+                            </h2>
+                            <div className="flex flex-wrap justify-center gap-4 mb-4">
+                                {skills.map((skill) => (
+                                    <Badge
+                                        key={skill.id}
+                                        className="rounded-xl text-2xl lg:text-4xl leading-9"
+                                        variant="secondary"
+                                    >
+                                        <span className="font-roboto">
+                                            {skill.name}
+                                        </span>
+                                    </Badge>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
