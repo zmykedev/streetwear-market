@@ -117,15 +117,15 @@
         @apply border-border;
     }
     body {
-          @apply bg-background text-foreground overflow-y-scroll;
-        scroll-snap-type: y mandatory;
-        min-height: 100vh;
+          @apply bg-background text-foreground ;
+      
+       
     }
 }
 
 @layer components {
-    .snap-start {
-        scroll-snap-align: start;
-    }
+  .custom-section-spacing > section {
+    @apply my-20;
+  }
 }
 

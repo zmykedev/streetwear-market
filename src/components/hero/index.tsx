@@ -76,7 +76,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
             <TooltipProvider>
                 <section
                     ref={ref}
-                    className="flex flex-col items-center p-5 m-2 w-full  gap-y-4 lg:gap-y-7 h-screen "
+                    className="flex flex-col items-center p-5 m-2 w-full  gap-y-4 lg:gap-y-7"
                 >
                     <div className="mr-72  lg:mr-[500px] ">
                         <Sheet>

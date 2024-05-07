@@ -26,7 +26,7 @@ function App() {
     return (
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
             <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-                <div className="flex flex-col gap-y-20">
+                <div className="flex flex-col  custom-section-spacing ">
                     <HeroSection ref={homeRef} />
 
                     <Skills ref={skillsRef} />

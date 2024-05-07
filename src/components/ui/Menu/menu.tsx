@@ -33,12 +33,10 @@ export const MenuBar: React.FunctionComponent<MenuProps> = ({
     const { theme } = useTheme()
     const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
         if (ref?.current) {
-            const yOffset = -70
-            const y =
-                ref.current.getBoundingClientRect().top +
-                window.scrollY +
-                yOffset
-            window.scrollTo({ top: y, behavior: 'smooth' })
+            ref.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            })
         }
     }
 
