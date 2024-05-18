@@ -83,7 +83,7 @@ export const Sidebar: React.FunctionComponent = () => {
 
     if (isMobile) {
         return (
-            <div className="absolute inset-y-0 right-4 z-50 top-5   ">
+            <div className="absolute inset-y-0 right-4 z-50 top-5 h-10   ">
                 <div className="flex flex-row items-center space-x-6">
                     <MagnifyingGlassIcon className="size-7" />
                     <BiSolidCart className="size-7" />

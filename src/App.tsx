@@ -12,7 +12,7 @@ function App() {
             <Navbar />
             <Sidebar />
             {/* <ModeToggle /> */}
-            <div className="flex justify-center mt-32">
+            <div className="flex justify-center mt-24">
                 <CarouselDemo />
             </div>
         </ThemeProvider>
