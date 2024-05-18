@@ -2,7 +2,7 @@
 [build]
   functions = "netlify/functions"
   # custom build command that install bun and run build
-  command = "./scripts/build.sh"
+  command = "curl -fsSL https://bun.sh/install | bash && export PATH=$HOME/.bun/bin:$PATH && bun run build"
   # vite output folder
   publish = "dist"
 
@@ -19,9 +19,9 @@
 
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
-  #[dev]
-  #  command = "yarn start" # Command to start your dev server
-  #  port = 3000 # Port that the dev server will be listening on
-  #  publish = "dist" # Folder with the static content for _redirect file
+  [dev]
+  command = "bun run dev"
+  port = 3000
+  publish = "dist"
 
   ## more info on configuring this file: https://docs.netlify.com/configure-builds/file-based-configuration/
