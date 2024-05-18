@@ -4,13 +4,17 @@ import { Navbar } from './components/ui/Navbar/navbar'
 import { ModeToggle } from './components/ui/mode-toggle'
 import { Sidebar } from './components/ui/Sidebar/sidebar'
 import { ThemeProvider } from './components/ui/theme-provider'
+import { CarouselDemo } from './components/ui/Carousel/carousel'
 
 function App() {
     return (
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
             <Navbar />
             <Sidebar />
-            <ModeToggle />
+            {/* <ModeToggle /> */}
+            <div className="flex justify-center mt-32">
+                <CarouselDemo />
+            </div>
         </ThemeProvider>
     )
 }

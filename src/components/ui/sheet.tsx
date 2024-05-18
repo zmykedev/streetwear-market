@@ -50,6 +50,7 @@ interface SheetContentProps
     extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
         VariantProps<typeof sheetVariants> {}
 
+const newLocal = 'h-8 w-8'
 const SheetContent = React.forwardRef<
     React.ElementRef<typeof SheetPrimitive.Content>,
     SheetContentProps
@@ -62,8 +63,8 @@ const SheetContent = React.forwardRef<
             {...props}
         >
             {children}
-            <SheetPrimitive.Close className="absolute xl:top-4 xl:right-4 right-5 m-auto xl:inset-auto w-max h-max xl:bottom-auto xl:left-auto rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none bg-secondary">
-                <Cross2Icon className="h-4 w-4" />
+            <SheetPrimitive.Close className="absolute xl:top-4 xl:right-4 top-6 right-5 m-auto xl:inset-auto w-max h-max xl:bottom-auto xl:left-auto rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none bg-secondary">
+                <Cross2Icon className={newLocal} />
                 <span className="sr-only">Close</span>
             </SheetPrimitive.Close>
         </SheetPrimitive.Content>
