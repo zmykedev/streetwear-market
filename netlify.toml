@@ -2,7 +2,7 @@
 [build]
   functions = "netlify/functions"
   # custom build command that install bun and run build
-  command = "curl -fsSL https://bun.sh/install | bash && export PATH=$HOME/.bun/bin:$PATH && bun run build"
+  command = "curl -fsSL https://bun.sh/install | bash && export PATH=$HOME/.bun/bin:$PATH && bun install && bun run vite build"
   # vite output folder
   publish = "dist"
 
@@ -20,7 +20,7 @@
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
   [dev]
-  command = "bun run dev"
+  command = "bun run vite dev"
   port = 3000
   publish = "dist"
 
