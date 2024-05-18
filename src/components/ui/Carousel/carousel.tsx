@@ -9,17 +9,23 @@ import {
     CarouselPrevious,
 } from '@/components/ui/carousel'
 
+const messages = [
+    'Recibe entre 48 y 72 horas hábiles en Región Metropolitana',
+    'Compra hasta en 6 cuotas sin intereses',
+    'Nuevas ofertas hasta 40% OFF',
+]
+
 export function CarouselDemo() {
     return (
         <Carousel className="w-[280px]">
             <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
+                {messages.map((message, index) => (
                     <CarouselItem key={index}>
                         <div className="p-1">
                             <Card>
-                                <CardContent className="flex  items-center justify-center p-6">
-                                    <span className="text-4xl font-semibold">
-                                        {index + 1}
+                                <CardContent className="flex flex-col items-center justify-center p-6">
+                                    <span className="text-sm font-semibold text-center">
+                                        {message}
                                     </span>
                                 </CardContent>
                             </Card>

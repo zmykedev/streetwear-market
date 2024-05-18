@@ -19,6 +19,7 @@ type CarouselProps = {
     plugins?: CarouselPlugin
     orientation?: 'horizontal' | 'vertical'
     setApi?: (api: CarouselApi) => void
+    autoPlayInterval?: number // Nueva propiedad para el intervalo de auto-play
 }
 
 type CarouselContextProps = {
@@ -52,6 +53,7 @@ const Carousel = React.forwardRef<
             opts,
             setApi,
             plugins,
+            autoPlayInterval = 6000,
             className,
             children,
             ...props
@@ -120,6 +122,24 @@ const Carousel = React.forwardRef<
             }
         }, [api, onSelect])
 
+        React.useEffect(() => {
+            if (!api) {
+                return
+            }
+
+            const intervalId = setInterval(() => {
+                if (api && api.canScrollNext()) {
+                    api.scrollNext()
+                } else {
+                    api.scrollTo(0)
+                }
+            }, autoPlayInterval)
+
+            return () => {
+                clearInterval(intervalId)
+            }
+        }, [api, autoPlayInterval])
+
         return (
             <CarouselContext.Provider
                 value={{
@@ -133,6 +153,7 @@ const Carousel = React.forwardRef<
                     scrollNext,
                     canScrollPrev,
                     canScrollNext,
+                    autoPlayInterval, // Añadido para pasar el valor a CarouselContext
                 }}
             >
                 <div
