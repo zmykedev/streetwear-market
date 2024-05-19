@@ -19,6 +19,8 @@ import {
     GiHandBag,
     GiJewelCrown,
     GiSunglasses,
+    GiRunningShoe,
+    GiPoloShirt,
 } from 'react-icons/gi'
 
 import { BiSolidStore, BiSolidCart } from 'react-icons/bi'
@@ -48,14 +50,9 @@ export const Sidebar: React.FunctionComponent = () => {
     }, [])
 
     const categories = [
-        { name: 'Women', icon: <GiClothes className="size-8" /> },
-        { name: 'Men', icon: <GiClothes className="size-8" /> },
-        { name: 'Kids', icon: <GiBabyBottle className="size-8" /> },
-        { name: 'Home', icon: <GiHomeGarage className="size-8" /> },
-        { name: 'Shoes', icon: <GiClothes className="size-8" /> },
-        { name: 'Handbags', icon: <GiHandBag className="size-8" /> },
-        { name: 'Jewelry', icon: <GiJewelCrown className="size-8" /> },
-        { name: 'Accessories', icon: <GiSunglasses className="size-8" /> },
+        { name: 'Poleras', icon: <GiPoloShirt className="size-8" /> },
+        { name: 'Zapatillas', icon: <GiRunningShoe className="size-8" /> },
+        { name: 'Accesiorios', icon: <GiSunglasses className="size-8" /> },
     ]
 
     const dinamicStyle = toggle ? 'w-64' : 'w-28'
@@ -63,7 +60,7 @@ export const Sidebar: React.FunctionComponent = () => {
 
     const List = () => {
         return (
-            <NavigationMenu.List className="space-y-2">
+            <NavigationMenu.List className="space-y-2 fixed">
                 {categories.map((category) => (
                     <NavigationMenu.Item key={category.name}>
                         <NavigationMenu.Link
@@ -82,38 +79,7 @@ export const Sidebar: React.FunctionComponent = () => {
     }
 
     if (isMobile) {
-        return (
-            <div className="absolute inset-y-0 right-4 z-50 top-5 h-10   ">
-                <div className="flex flex-row items-center space-x-6">
-                    <MagnifyingGlassIcon className="size-7" />
-                    <BiSolidCart className="size-7" />
-                    <PersonIcon className="size-7" />
-                    <Sheet>
-                        <SheetTrigger asChild>
-                            <RowsIcon className="size-7" />
-                        </SheetTrigger>
-                        <SheetContent className="w-80">
-                            <SheetHeader>
-                                <SheetTitle className=" flex border-b-2 pb-4 mb-4 justify-center">
-                                    Wear Pulse
-                                </SheetTitle>
-                            </SheetHeader>
-                            <div className="space-y-4">
-                                {categories.map((category) => (
-                                    <div
-                                        className="flex p-1 flex-row hover:bg-slate-700 hover:rounded-xl  justify-start gap-x-4"
-                                        key={category.name}
-                                    >
-                                        {category.icon}
-                                        {category.name}
-                                    </div>
-                                ))}
-                            </div>
-                        </SheetContent>
-                    </Sheet>
-                </div>
-            </div>
-        )
+        return <></>
     }
 
     return (
